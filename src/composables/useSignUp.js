@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { app } from '../config/firebase';
 const error = ref(null);
 const isPending = ref(false);
@@ -12,7 +12,16 @@ async function signUp(fullName,email, password) {
     if (!response) {
       throw new Error("Could not create a new user.");
     }
-    await response.user.displayName(fullName)
+    // await response.user.displayName(fullName)
+    updateProfile(auth.currentUser, {
+      displayName: fullName, photoURL: "https://example.com/jane-q-user/profile.jpg"
+    }).then(() => {
+      // Profile updated!
+      // ...
+    }).catch((error) => {
+      // An error occurred
+      // ...
+    });
     return response;
   } catch (err) {
     error.value = 'The email address is adready in use by another account.'

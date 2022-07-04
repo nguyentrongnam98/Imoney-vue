@@ -71,7 +71,7 @@ export default {
     const router = useRouter()
     const onSubmit = async () => {
       await login(email.value, password.value);
-      if (!error) router.push({name:'home',params:{}})
+      router.push({name:'profile',params:{}})
     };
     return {
       onSubmit,
