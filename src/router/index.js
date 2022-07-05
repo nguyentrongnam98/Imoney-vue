@@ -18,6 +18,9 @@ const router = createRouter({
       name: 'home',
       meta:{
         layout:'default-layout',
+        leading:true,
+        text:'Hey, Nam Nguyen',
+        isShowFooter:true
       },
       component: HomeView
     },
@@ -47,7 +50,10 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       meta: {
-        layout:'default-layout'
+        layout:'default-layout',
+        leading:false,
+        text:'Profile',
+        isShowFooter:true
       },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
@@ -114,7 +120,10 @@ const router = createRouter({
       path: '/budget',
       name: 'budget',
       meta: {
-        layout:'default-layout'
+        layout:'default-layout',
+        leading:false,
+        isShowFooter:true,
+        text:'Budget'
       },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
@@ -125,12 +134,29 @@ const router = createRouter({
       path: '/report',
       name: 'report',
       meta: {
-        layout:'default-layout'
+        layout:'default-layout',
+        leading:false,
+        isShowFooter:true,
+        text:'Report'
       },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Report.vue')
+    },
+    {
+      path: '/new-transaction',
+      name: 'new-transaction',
+      meta: {
+        layout:'default-layout',
+        leading:false,
+        isShowFooter:true,
+        text:'New Transaction'
+      },
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/NewTransaction.vue')
     },
     {
       path: '/logout',

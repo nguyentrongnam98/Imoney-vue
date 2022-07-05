@@ -24,11 +24,18 @@ import {
   faHouse,
   faBug,
   faBurger,
-  faBell
+  faBell,
+  faNoteSticky,
+  faCalendar,
+  faLocation,
+  faPerson,
+  faPeopleGroup,
+  faCamera
 } from "@fortawesome/free-solid-svg-icons";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from './config/firebase';
+
 
 /* add icons to the library */
 library.add(
@@ -44,7 +51,13 @@ library.add(
   faHouse,
   faBug,
   faBurger,
-  faBell
+  faBell,
+  faNoteSticky,
+  faCalendar,
+  faLocation,
+  faPerson,
+  faPeopleGroup,
+  faCamera
 );
 let app;
 onAuthStateChanged(auth,() => {

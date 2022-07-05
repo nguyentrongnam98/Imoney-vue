@@ -11,7 +11,6 @@ export default {
     const router = useRouter()
     const onLogout = async () => {
        await logout()
-       console.log(error,98);
          router.push({name:'login',params:{}})
     }
     onLogout()
